@@ -1,0 +1,25 @@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+<div class="container">
+  <h1>Dojo Weather Forecast</h1>
+  <a  (click)='se()' [routerLink]="['seattle']">Seattle</a>
+  <a  (click)='sa()'[routerLink]="['sanJose']">sanJose</a>
+  <a  (click)='bu()' [routerLink]="['burbank']">burbank</a>
+  <a  (click)='da()' [routerLink]="['dallas']">dallas</a>
+  <a  (click)='wa()' [routerLink]="['washington']">washington</a>
+  <a  (click)='ch()' [routerLink]="['chicago']">chicago</a>
+<hr>
+  <div class='l'>
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class='r' *ngIf='a'>
+    <!-- {{ a | json }} -->
+      <strong>Humidity: {{ humidity }}</strong><br>
+      <strong>Temperature(Average): {{ tempAve }}</strong><br>
+      <strong>Temperature(High): {{ tempMax }}</strong><br>
+      <strong>Temperature(Low): {{ tempMin }}</strong><br>
+      <strong>Status: {{ status }}</strong><br>
+  </div>
+
+</div>
